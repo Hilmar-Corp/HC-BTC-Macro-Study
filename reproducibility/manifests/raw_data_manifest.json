@@ -1,0 +1,88 @@
+{
+  "files": {
+    "data/raw/coinbase/btc_usd_hourly.parquet": {
+      "bytes": 4311073,
+      "columns": [
+        "timestamp",
+        "low",
+        "high",
+        "open",
+        "close",
+        "volume",
+        "close_time"
+      ],
+      "rows": 79333,
+      "sha256": "207151ee31f13980f8419d7ef8a8d94daa00d8a0da3d80261d6397f69cef9f25"
+    },
+    "data/raw/fred/BAA10Y.parquet": {
+      "bytes": 108297,
+      "columns": [
+        "date",
+        "value"
+      ],
+      "rows": 10611,
+      "sha256": "3ff71f9cb86e32bf67bc5c24d42e5bfbfaa63a5b35fbe10b38b21a0ce6fd2725"
+    },
+    "data/raw/fred/DFII10.parquet": {
+      "bytes": 63922,
+      "columns": [
+        "date",
+        "value"
+      ],
+      "rows": 6176,
+      "sha256": "bc87110fd5672f3955dff40c49fd95fea0260b7cc1bb52e0ce26f324f782399c"
+    },
+    "data/raw/fred/DTWEXBGS.parquet": {
+      "bytes": 89040,
+      "columns": [
+        "date",
+        "value"
+      ],
+      "rows": 5390,
+      "sha256": "200cfdabb9074f9ebfafdba0874a7b70bc462ed51eb98519ff5bfec6986bc25a"
+    },
+    "data/raw/market/nasdaq100_daily.parquet": {
+      "bytes": 122517,
+      "columns": [
+        "date",
+        "adj_close",
+        "close",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "rows": 2275,
+      "sha256": "f8df59a737b406062894c863c4c7e24249b1ca4fc8a369e2d9e0e19fe8537840"
+    },
+    "data/raw/market/sp500_daily.parquet": {
+      "bytes": 121340,
+      "columns": [
+        "date",
+        "adj_close",
+        "close",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "rows": 2275,
+      "sha256": "4c575b1dc57b771e3eeb224e6a1e5ddb32e2a3cecf6b627e3afe8603a82d75bf"
+    },
+    "data/raw/market/vix_daily.parquet": {
+      "bytes": 77025,
+      "columns": [
+        "date",
+        "adj_close",
+        "close",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "rows": 2276,
+      "sha256": "38fe5b66ef66b033ba39b3deb2231d7f975244c137eb2621903d0debf963be19"
+    }
+  },
+  "schema_version": 1
+}

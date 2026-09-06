@@ -1,0 +1,21 @@
+{
+  "certification_status": "PASS",
+  "checks": {
+    "PRE2020_ADJ_R2_BELOW_1PCT": true,
+    "P2_ADJ_R2_ABOVE_10PCT": true,
+    "P3_ADJ_R2_ABOVE_10PCT": true,
+    "P2_VS_P1_JOINT_SIGNIFICANT": true,
+    "P3_VS_P1_JOINT_SIGNIFICANT": true,
+    "P3_VS_P2_JOINT_NOT_SIGNIFICANT": true,
+    "NDX_P2_VS_P1_FDR": true,
+    "NDX_P3_VS_P1_FDR": true,
+    "EVENT_STUDY_NO_FDR_DISCOVERY": true,
+    "COVID_ABLATION_JOINT_SURVIVES": true,
+    "COVID_ABLATION_NDX_SURVIVES": true,
+    "FIGURE_FINAL_PERIOD_ADJ_R2_PNG": true,
+    "FIGURE_FINAL_PERIOD_NDX_BETA_PNG": true,
+    "FIGURE_FINAL_NDX_VS_SPX_ADJ_R2_PNG": true,
+    "FIGURE_FINAL_ROLLING_ADJ_R2_252_PNG": true
+  },
+  "artifact_count": 50
+}

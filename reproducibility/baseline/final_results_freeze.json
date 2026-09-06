@@ -1,0 +1,362 @@
+{
+  "study": "HC-BTC-MACRO-INTEGRATION",
+  "freeze_timestamp_utc": "2026-09-06T10:04:55.383951+00:00",
+  "sample": {
+    "start": "2017-08-17",
+    "last_market_session": "2026-09-04"
+  },
+  "main_results": {
+    "period_r2": {
+      "pre_2020": {
+        "r2": 0.0015174677878306,
+        "adj_r2": -0.0048120569805507,
+        "nobs": 636
+      },
+      "post_covid_pre_etf": {
+        "r2": 0.1704377158235065,
+        "adj_r2": 0.1670097725004631,
+        "nobs": 973
+      },
+      "spot_etf_era": {
+        "r2": 0.1813341557865159,
+        "adj_r2": 0.1763725446094645,
+        "nobs": 665
+      }
+    },
+    "period_betas": {
+      "ndx": {
+        "pre_2020": 0.1268839409729698,
+        "post_covid_pre_etf": 0.8177056090562624,
+        "spot_etf_era": 0.8806904912437306
+      },
+      "usd": {
+        "pre_2020": 0.361335089420297,
+        "post_covid_pre_etf": -1.3414206595850326,
+        "spot_etf_era": -1.1715523111416992
+      },
+      "real_rate": {
+        "pre_2020": -0.030292852575744,
+        "post_covid_pre_etf": -0.0087360778274941,
+        "spot_etf_era": 0.0202736818830979
+      },
+      "credit": {
+        "pre_2020": 0.0520706739896669,
+        "post_covid_pre_etf": -0.0367217047444612,
+        "spot_etf_era": -0.0787267333490217
+      }
+    },
+    "joint_wald": {
+      "P2_vs_P1_joint_beta_change": {
+        "statistic": 18.660043778749262,
+        "p_value": 0.0009164825898266
+      },
+      "P3_vs_P1_joint_beta_change": {
+        "statistic": 18.7266548279281,
+        "p_value": 0.0008893194508161
+      },
+      "P3_vs_P2_joint_beta_change": {
+        "statistic": 1.8277466836391052,
+        "p_value": 0.7674022067331833
+      }
+    },
+    "factor_change_fdr": {
+      "P2_vs_P1__ndx": {
+        "p_value": 0.0024511826680144,
+        "q_value_bh": 0.0147070960080864,
+        "reject_5pct": true
+      },
+      "P3_vs_P1__ndx": {
+        "p_value": 0.0018982351936373,
+        "q_value_bh": 0.0147070960080864,
+        "reject_5pct": true
+      },
+      "P3_vs_P2__ndx": {
+        "p_value": 0.6384033797482915,
+        "q_value_bh": 0.7567298418006725,
+        "reject_5pct": false
+      },
+      "P2_vs_P1__usd": {
+        "p_value": 0.0488839637449929,
+        "q_value_bh": 0.1955358549799716,
+        "reject_5pct": false
+      },
+      "P3_vs_P1__usd": {
+        "p_value": 0.0788898258902864,
+        "q_value_bh": 0.2366694776708592,
+        "reject_5pct": false
+      },
+      "P3_vs_P2__usd": {
+        "p_value": 0.7567298418006725,
+        "q_value_bh": 0.7567298418006725,
+        "reject_5pct": false
+      },
+      "P2_vs_P1__real_rate": {
+        "p_value": 0.747697759800738,
+        "q_value_bh": 0.7567298418006725,
+        "reject_5pct": false
+      },
+      "P3_vs_P1__real_rate": {
+        "p_value": 0.4668699822915424,
+        "q_value_bh": 0.7403236219641781,
+        "reject_5pct": false
+      },
+      "P3_vs_P2__real_rate": {
+        "p_value": 0.4749725498285655,
+        "q_value_bh": 0.7403236219641781,
+        "reject_5pct": false
+      },
+      "P2_vs_P1__credit": {
+        "p_value": 0.4935490813094521,
+        "q_value_bh": 0.7403236219641781,
+        "reject_5pct": false
+      },
+      "P3_vs_P1__credit": {
+        "p_value": 0.2975057408455147,
+        "q_value_bh": 0.7140137780292352,
+        "reject_5pct": false
+      },
+      "P3_vs_P2__credit": {
+        "p_value": 0.6190672071851777,
+        "q_value_bh": 0.7567298418006725,
+        "reject_5pct": false
+      }
+    },
+    "shapley": {
+      "pre_2020": {
+        "ndx": {
+          "shapley_r2": 0.0005220760158774,
+          "share": 0.3440442163347775
+        },
+        "usd": {
+          "shapley_r2": 0.0002529694758234,
+          "share": 0.1667050054387467
+        },
+        "real_rate": {
+          "shapley_r2": 0.0003332575589275,
+          "share": 0.2196142558017083
+        },
+        "credit": {
+          "shapley_r2": 0.0004091647372022,
+          "share": 0.2696365224247673
+        }
+      },
+      "post_covid_pre_etf": {
+        "ndx": {
+          "shapley_r2": 0.1301444938103376,
+          "share": 0.7635897558326016
+        },
+        "usd": {
+          "shapley_r2": 0.0312264660807746,
+          "share": 0.1832133570313193
+        },
+        "real_rate": {
+          "shapley_r2": 0.0028803465505164,
+          "share": 0.0168997016687263
+        },
+        "credit": {
+          "shapley_r2": 0.0061864093818777,
+          "share": 0.0362971854673527
+        }
+      },
+      "spot_etf_era": {
+        "ndx": {
+          "shapley_r2": 0.1481074905641922,
+          "share": 0.8167655449233663
+        },
+        "usd": {
+          "shapley_r2": 0.0186974582495074,
+          "share": 0.1031105153268529
+        },
+        "real_rate": {
+          "shapley_r2": 0.0009660103467104,
+          "share": 0.0053272387792608
+        },
+        "credit": {
+          "shapley_r2": 0.0135631966261057,
+          "share": 0.0747967009705199
+        }
+      }
+    },
+    "equity_single_factor_models": {
+      "NDX_ONLY": {
+        "pre_2020": -0.0013401006491855,
+        "post_covid_pre_etf": 0.1547988865576893,
+        "spot_etf_era": 0.1655631716099388
+      },
+      "SPX_ONLY": {
+        "pre_2020": -0.0014237056446442,
+        "post_covid_pre_etf": 0.1392107639027894,
+        "spot_etf_era": 0.1673930550926972
+      }
+    },
+    "covid_ablation": {
+      "joint_p2_vs_p1_p": 0.000304860288183,
+      "joint_p3_vs_p1_p": 0.0009585028646896,
+      "ndx_p2_vs_p1_p": 0.0020383606261226
+    },
+    "break_diagnostics": [
+      {
+        "variant": "primary",
+        "factor_set": "NDX_ONLY",
+        "supf": 19.511448472606133,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "primary",
+        "factor_set": "FULL_NDX",
+        "supf": 8.897147110426761,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "primary",
+        "factor_set": "SPX_ONLY",
+        "supf": 17.528663691850337,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "primary",
+        "factor_set": "FULL_SPX",
+        "supf": 7.702454537809669,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "strict",
+        "factor_set": "NDX_ONLY",
+        "supf": 19.93950188526528,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "strict",
+        "factor_set": "FULL_NDX",
+        "supf": 9.2102012564639,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "strict",
+        "factor_set": "SPX_ONLY",
+        "supf": 18.07175439711431,
+        "best_date": "2020-03-09"
+      },
+      {
+        "variant": "strict",
+        "factor_set": "FULL_SPX",
+        "supf": 8.023617181020375,
+        "best_date": "2020-03-09"
+      }
+    ],
+    "same_day_event_tests": [
+      {
+        "event": "NDX_DOWN_10",
+        "comparison": "P2_MINUS_P1",
+        "mean_difference": -0.0278997255173311,
+        "studentized_permutation_p": 0.009,
+        "q_value_bh": 0.234,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "NDX_DOWN_10",
+        "comparison": "P3_MINUS_P1",
+        "mean_difference": -0.0280472775895591,
+        "studentized_permutation_p": 0.0045,
+        "q_value_bh": 0.234,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "NDX_DOWN_10",
+        "comparison": "P3_MINUS_P2",
+        "mean_difference": -0.000147552072228,
+        "studentized_permutation_p": 0.978,
+        "q_value_bh": 0.98,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "RISK_OFF_2OF3",
+        "comparison": "P2_MINUS_P1",
+        "mean_difference": -0.0094998682484178,
+        "studentized_permutation_p": 0.2365,
+        "q_value_bh": 0.6937333333333333,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "RISK_OFF_2OF3",
+        "comparison": "P3_MINUS_P1",
+        "mean_difference": -0.0188169555889189,
+        "studentized_permutation_p": 0.0125,
+        "q_value_bh": 0.234,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "RISK_OFF_2OF3",
+        "comparison": "P3_MINUS_P2",
+        "mean_difference": -0.009317087340501,
+        "studentized_permutation_p": 0.089,
+        "q_value_bh": 0.4195714285714285,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "RISK_ON_2OF3",
+        "comparison": "P2_MINUS_P1",
+        "mean_difference": 0.0101889394792662,
+        "studentized_permutation_p": 0.104,
+        "q_value_bh": 0.4733793103448275,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "RISK_ON_2OF3",
+        "comparison": "P3_MINUS_P1",
+        "mean_difference": 0.0164676041122695,
+        "studentized_permutation_p": 0.015,
+        "q_value_bh": 0.234,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "RISK_ON_2OF3",
+        "comparison": "P3_MINUS_P2",
+        "mean_difference": 0.0062786646330032,
+        "studentized_permutation_p": 0.1575,
+        "q_value_bh": 0.6496875,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "VIX_ORTHO_UP_10",
+        "comparison": "P2_MINUS_P1",
+        "mean_difference": 0.0033244046092651,
+        "studentized_permutation_p": 0.725,
+        "q_value_bh": 0.9075,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "VIX_ORTHO_UP_10",
+        "comparison": "P3_MINUS_P1",
+        "mean_difference": -0.017642443602171,
+        "studentized_permutation_p": 0.056,
+        "q_value_bh": 0.348,
+        "fdr_reject_5pct": false
+      },
+      {
+        "event": "VIX_ORTHO_UP_10",
+        "comparison": "P3_MINUS_P2",
+        "mean_difference": -0.0209668482114362,
+        "studentized_permutation_p": 0.002,
+        "q_value_bh": 0.234,
+        "fdr_reject_5pct": false
+      }
+    ],
+    "any_phase6b_event_change_survives_fdr": false
+  },
+  "interpretation_lock": {
+    "supported": [
+      "Bitcoin's contemporaneous statistical integration with US equity risk increased materially after the pre-2020 period.",
+      "The result is robust to Nasdaq-100 versus S&P 500 definitions and to removal of the 2020 Covid crash window.",
+      "The post-2020 increase is driven primarily by the US equity factor.",
+      "The 2024 spot-ETF era does not exhibit a statistically established additional joint beta break relative to 2020-2023.",
+      "Event-study evidence is directionally consistent with stronger contemporaneous risk-on/risk-off synchronization."
+    ],
+    "not_supported": [
+      "The ETF launch caused Bitcoin's macro-financial integration.",
+      "Dollar, real rates and credit all underwent equally robust structural changes.",
+      "Macro shocks robustly predict Bitcoin returns over the following 1-20 sessions.",
+      "A precise single causal break date can be identified."
+    ]
+  }
+}

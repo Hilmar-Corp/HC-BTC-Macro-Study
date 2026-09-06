@@ -1,0 +1,11 @@
+HC-BTC-Macro-Integration-Study
+Copyright 2026 HilmarCorp
+
+Original source code and documentation are licensed under Apache-2.0.
+
+Third-party market and macroeconomic data are NOT relicensed under Apache-2.0.
+Their use and redistribution remain subject to originating provider terms.
+
+Raw third-party snapshots are intentionally excluded from the public Git
+repository. Exact empirical reproduction requires the separately generated
+private reproducibility bundle verified by SHA-256.

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install locked Python
+        run: uv python install "$(cat .python-version)"
+
+      - name: Locked sync
+        run: uv sync --locked --all-extras
+
+      - name: Lockfile integrity
+        run: uv lock --check
+
+      - name: Compile
+        run: uv run python -m compileall -q src tests
+
+      - name: Ruff
+        run: uv run ruff check --select E9,F src tests
+
+      - name: Typecheck
+        run: uv run pyright
+
+      - name: Public no-data test gate
+        run: >
+          uv run pytest -q
+          tests/regression/test_architecture_contract.py
+          tests/regression/test_import_surface.py
+          tests/unit/test_research_contracts.py
+          tests/unit/test_integrity_adversarial.py
+          tests/unit/test_reproducibility_adversarial.py
+          tests/unit/test_factor_shift_adversarial.py
+
+      - name: Dependency audit
+        run: uv run pip-audit

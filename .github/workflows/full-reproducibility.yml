@@ -1,0 +1,48 @@
+name: Full Reproducibility
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install locked Python
+        run: uv python install "$(cat .python-version)"
+
+      - name: Restore private raw snapshot
+        env:
+          HC_REPRO_BUNDLE_B64: ${{ secrets.HC_REPRO_BUNDLE_B64 }}
+        run: |
+          test -n "$HC_REPRO_BUNDLE_B64"
+          mkdir -p reproducibility/private
+          echo "$HC_REPRO_BUNDLE_B64" \
+            | base64 --decode \
+            > reproducibility/private/hc_macro_raw_snapshot.tar.gz
+          tar -xzf reproducibility/private/hc_macro_raw_snapshot.tar.gz
+
+      - name: Locked sync
+        run: uv sync --locked --all-extras
+
+      - name: Verify raw data
+        run: uv run python scripts/verify_raw_manifest.py
+
+      - name: Full test suite
+        run: PYTHONHASHSEED=0 uv run pytest -q
+
+      - name: Exact empirical rebuild
+        run: PYTHONHASHSEED=0 uv run hc-macro all
+
+      - name: Verify exact numerical freeze
+        run: uv run hc-macro verify-freeze

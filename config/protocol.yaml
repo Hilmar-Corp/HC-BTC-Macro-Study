@@ -1,0 +1,107 @@
+study:
+  id: "HC-BTC-MACRO-INTEGRATION"
+  version: "0.1.0"
+  title: "Bitcoin est-il devenu un actif macro ?"
+  subtitle: "Évolution des sensibilités de Bitcoin aux facteurs macrofinanciers depuis 2017"
+
+research_question:
+  primary: >
+    Le degré d'intégration macrofinancière de Bitcoin a-t-il changé
+    depuis 2017 ?
+  null_hypothesis: >
+    Le degré d'intégration macrofinancière de Bitcoin est stable
+    dans le temps.
+  alternative_hypothesis: >
+    Le degré d'intégration macrofinancière de Bitcoin varie dans le temps.
+
+sample:
+  start: "2017-08-17"
+  end_rule: "latest_complete_nasdaq_session"
+  primary_calendar: "NASDAQ"
+  timezone: "UTC"
+
+bitcoin:
+  primary:
+    venue: "Coinbase Exchange"
+    product: "BTC-USD"
+    granularity_seconds: 3600
+  robustness:
+    - venue: "Binance"
+      product: "BTCUSDT"
+    - venue: "Bitstamp"
+      product: "BTC/USD"
+
+market_factor:
+  primary:
+    ticker: "^NDX"
+    label: "Nasdaq-100"
+  robustness:
+    ticker: "^GSPC"
+    label: "S&P 500"
+
+fred:
+  dollar:
+    series_id: "DTWEXBGS"
+    transform: "log_return"
+  real_rate:
+    series_id: "DFII10"
+    transform: "first_difference"
+    unit: "percentage_points"
+  credit:
+    series_id: "BAA10Y"
+    transform: "first_difference"
+    unit: "percentage_points"
+
+returns:
+  type: "log"
+
+rolling:
+  primary_window: 252
+  robustness_windows:
+    - 126
+    - 504
+
+horizons:
+  - 1
+  - 5
+  - 20
+
+hac:
+  rule: "max(5, horizon_minus_1)"
+
+winsorization:
+  primary: null
+  robustness:
+    - [0.01, 0.99]
+    - [0.005, 0.995]
+
+events:
+  lower_quantile: 0.10
+  upper_quantile: 0.90
+  horizons:
+    - 1
+    - 5
+    - 20
+  enforce_non_overlap: true
+
+structural_breaks:
+  method: "Bai-Perron"
+  minimum_segment_fraction: 0.15
+
+descriptive_periods:
+  - name: "pre_2020"
+    start: "2017-08-17"
+    end: "2020-02-29"
+  - name: "post_covid_pre_etf"
+    start: "2020-03-01"
+    end: "2024-01-10"
+  - name: "spot_etf_era"
+    start: "2024-01-11"
+    end: null
+
+multiple_testing:
+  secondary_family_method: "Benjamini-Hochberg"
+  fdr_alpha: 0.05
+
+reproducibility:
+  random_seed: 20260906

@@ -1,0 +1,67 @@
+schema_version: 1
+study: HC-BTC-MACRO-INTEGRATION
+
+frozen_sample:
+  start: "2017-08-17"
+  last_traditional_market_session: "2026-09-04"
+
+datasets:
+  - id: coinbase_btc_usd_hourly
+    provider: Coinbase Exchange
+    instrument: BTC-USD
+    frequency: hourly
+    endpoint_template: "https://api.exchange.coinbase.com/products/{product}/candles"
+    local_pattern: "data/raw/coinbase/*.parquet"
+    role: primary_bitcoin_price
+    redistribution: "provider terms apply"
+
+  - id: yahoo_nasdaq100_daily
+    provider: Yahoo Finance via yfinance
+    instrument: "^NDX"
+    frequency: daily
+    local_pattern: "data/raw/market/nasdaq100_daily.parquet"
+    role: primary_us_equity_factor
+    redistribution: "provider terms apply"
+
+  - id: yahoo_sp500_daily
+    provider: Yahoo Finance via yfinance
+    instrument: "^GSPC"
+    frequency: daily
+    local_pattern: "data/raw/market/sp500_daily.parquet"
+    role: equity_robustness_factor
+    redistribution: "provider terms apply"
+
+  - id: yahoo_vix_daily
+    provider: Yahoo Finance via yfinance
+    instrument: "^VIX"
+    frequency: daily
+    local_pattern: "data/raw/market/vix_daily.parquet"
+    role: risk_aversion_extension
+    redistribution: "provider terms apply"
+
+  - id: fred_dtwexbgs
+    provider: Federal Reserve Bank of St. Louis FRED
+    series: DTWEXBGS
+    frequency: daily
+    local_pattern: "data/raw/fred/DTWEXBGS.parquet"
+    role: broad_us_dollar_factor
+
+  - id: fred_dfii10
+    provider: Federal Reserve Bank of St. Louis FRED
+    series: DFII10
+    frequency: daily
+    local_pattern: "data/raw/fred/DFII10.parquet"
+    role: us_10y_real_yield_factor
+
+  - id: fred_baa10y
+    provider: Federal Reserve Bank of St. Louis FRED
+    series: BAA10Y
+    frequency: daily
+    local_pattern: "data/raw/fred/BAA10Y.parquet"
+    role: credit_spread_factor
+
+policy:
+  raw_snapshots_committed_to_public_git: false
+  exact_reproduction_requires_private_raw_bundle: true
+  sha256_required: true
+  silent_source_substitution: forbidden

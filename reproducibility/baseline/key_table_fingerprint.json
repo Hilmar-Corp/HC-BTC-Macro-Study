@@ -1,0 +1,38 @@
+{
+  "interaction_period_betas.csv": {
+    "bytes": 1169,
+    "sha256": "8fd1545c72230fb88e745ca2d65c6796d92d4cd281d9b4081dd4c59368ede6fb"
+  },
+  "interaction_secondary_fdr.csv": {
+    "bytes": 2185,
+    "sha256": "36a68609deccd31d4263660466a8f1f9171e091b0cc80716cf702bd6cda958f8"
+  },
+  "interaction_wald_tests.csv": {
+    "bytes": 2043,
+    "sha256": "8e9934dd2de15c532c90b740f49fef3b9b771037400011fc2bd41b74d73432eb"
+  },
+  "period_metrics.csv": {
+    "bytes": 569,
+    "sha256": "fc6109ef8aa468ee50ffc6233e777232f1567a56ba38a62446073767426b2ce7"
+  },
+  "phase5_break_robustness.csv": {
+    "bytes": 727,
+    "sha256": "49c6986316cea8081165604a2b0d1375276d9c6acfcfd10aeeb698fd919f04ef"
+  },
+  "phase5_exclusion_windows.csv": {
+    "bytes": 1881,
+    "sha256": "285df7096e1a631f8b90d88cbcebdf1839067503979203d3c8968354f0b1d78c"
+  },
+  "phase5_period_factor_sets.csv": {
+    "bytes": 2292,
+    "sha256": "f2a7645f22adc1f61aa2591ad1f3f1e2312b78e09862aa91199d46b20eab0ac5"
+  },
+  "phase6b_corrected_difference_tests.csv": {
+    "bytes": 23241,
+    "sha256": "570bd81603cbccf8e3c77a8eb9be5dca352426c5d9687ee14a38b7f90b06ab30"
+  },
+  "shapley_r2_by_period.csv": {
+    "bytes": 2296,
+    "sha256": "a36e29f7e0afa4f8b20e0e844a1c3a8051079b84e1bd5936c2d43d36ffa4d5bc"
+  }
+}

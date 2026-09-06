@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it."
+title: "HC-BTC-Macro-Integration-Study"
+type: software
+authors:
+  - family-names: "Hilmarcher"
+    given-names: "Clovis"
+year: 2026
+version: "0.3.0"
+license: "Apache-2.0"
+abstract: >
+  Reproducible quantitative research on the evolution of Bitcoin's
+  contemporaneous integration with US equity and macro-financial factors.
