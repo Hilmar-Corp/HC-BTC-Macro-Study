@@ -1,11 +1,17 @@
-HC-BTC-Macro-Integration-Study
+HC-BTC-Macro-Study
 Copyright 2026 HilmarCorp
 
-Original source code and documentation are licensed under Apache-2.0.
+Le code source original et la documentation produits par HilmarCorp dans ce
+dépôt sont distribués sous Apache License, Version 2.0.
 
-Third-party market and macroeconomic data are NOT relicensed under Apache-2.0.
-Their use and redistribution remain subject to originating provider terms.
+Les données de marché, données macroéconomiques et autres contenus provenant
+de tiers ne sont pas relicenciés sous Apache-2.0. Leur utilisation, leur
+conservation et leur redistribution restent soumises aux conditions propres
+aux fournisseurs concernés.
 
-Raw third-party snapshots are intentionally excluded from the public Git
-repository. Exact empirical reproduction requires the separately generated
-private reproducibility bundle verified by SHA-256.
+Les instantanés bruts provenant de tiers sont volontairement exclus du dépôt
+Git public. La reproduction empirique exacte nécessite le paquet privé de
+reproductibilité autorisé, dont l'intégrité est contrôlée par SHA-256.
+
+Les marques, noms commerciaux et contenus appartenant à des tiers restent la
+propriété de leurs titulaires respectifs.

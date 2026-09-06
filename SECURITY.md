@@ -1,17 +1,17 @@
-# Security Policy
+# Politique de sécurité
 
-This is a quantitative research repository, not production execution
-infrastructure.
+Ce dépôt contient du code de recherche quantitative. Il ne constitue pas une infrastructure d'exécution ou de négociation en production.
 
-Never commit:
+Ne doivent jamais être publiés dans ce dépôt :
 
-- API keys;
-- private keys;
-- cloud credentials;
-- exchange credentials;
-- passwords;
-- client information;
-- restricted third-party raw-data bundles.
+- clés d'API ;
+- clés privées ;
+- identifiants d'infrastructure ;
+- identifiants de plateformes d'échange ;
+- mots de passe ;
+- données de clients ;
+- paquets privés contenant des données tierces dont la redistribution n'est pas autorisée.
 
-Any defect that can silently change a certified empirical result is treated
-as a high-severity research-integrity issue.
+Toute anomalie susceptible de modifier silencieusement un résultat empirique certifié est considérée comme un incident majeur d'intégrité de recherche.
+
+Les vulnérabilités de sécurité ne doivent pas être publiées dans une issue publique lorsqu'elles exposent des secrets, des accès, des données privées ou un risque d'exécution arbitraire.
