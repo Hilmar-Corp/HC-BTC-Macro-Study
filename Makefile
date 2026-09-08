@@ -1,5 +1,6 @@
 .PHONY: sync lock compile lint typecheck test audit legacy-scan verify-raw \
-        verify-freeze bundle clean-room paranoia due-diligence status tree
+        verify-freeze bundle clean-room paranoia due-diligence status tree \
+        publication-figures
 
 sync:
 	uv sync --locked --all-extras
@@ -39,6 +40,9 @@ bundle:
 clean-room:
 	bash scripts/clean_room_reproduce.sh
 
+publication-figures:
+	PYTHONHASHSEED=0 uv run python -m hc_macro_integration.reporting.publication_figures
+
 paranoia:
 	PYTHONHASHSEED=0 uv run python -m compileall -q src tests
 	PYTHONHASHSEED=0 uv run ruff check --select E9,F src tests
@@ -62,3 +66,4 @@ tree:
 	find src/hc_macro_integration -maxdepth 2 -type f \
 		! -path '*/__pycache__/*' \
 		| sort
+
