@@ -154,12 +154,42 @@ def _vif_table(
 ) -> pd.DataFrame:
     X = clean[x_cols].astype(float)
 
+    design = sm.add_constant(
+        X,
+        has_constant="add",
+    )
+
+    if not isinstance(
+        design,
+        pd.DataFrame,
+    ):
+        design = pd.DataFrame(
+            design,
+            index=X.index,
+            columns=[
+                "const",
+                *x_cols,
+            ],
+        )
+
+    values = design.to_numpy(
+        dtype=float
+    )
+
     rows = []
 
-    for i, col in enumerate(x_cols):
+    for col in x_cols:
+        # The design matrix is ["const", *x_cols].
+        # Using the protocol list avoids pandas get_loc's
+        # broad static return type (int | slice | bool mask).
+        factor_index = (
+            1
+            + x_cols.index(col)
+        )
+
         vif = variance_inflation_factor(
-            X.to_numpy(),
-            i,
+            values,
+            factor_index,
         )
 
         rows.append(

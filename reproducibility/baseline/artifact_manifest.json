@@ -164,8 +164,8 @@
     "sha256": "a36e29f7e0afa4f8b20e0e844a1c3a8051079b84e1bd5936c2d43d36ffa4d5bc"
   },
   "outputs/tables/structural_break_bic_models.csv": {
-    "bytes": 317,
-    "sha256": "7d77da05beac58d0c6a69c92ecc2710cf15b7846eb6d7f5209ede2e9194e44ba"
+    "bytes": 267,
+    "sha256": "b3cac91a2a623939e83841c082c6644a4a71683355de30da9eb385f73999fd55"
   },
   "outputs/tables/structural_break_selected_dates.csv": {
     "bytes": 36,
@@ -196,7 +196,7 @@
     "sha256": "3382466feb093e934cd2f4278b14dc31da1586f46f47c149949409984cbf6943"
   },
   "outputs/tables/vif.csv": {
-    "bytes": 438,
-    "sha256": "63b397f16348021978113e109b7883dc5a481117687bc5d4764e28ec0fc5e368"
+    "bytes": 439,
+    "sha256": "5abec9522dedb58235c62f2abb443826b19dfa5573038f3867ed173881863533"
   }
 }

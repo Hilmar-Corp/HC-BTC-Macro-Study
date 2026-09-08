@@ -7,6 +7,7 @@ import math
 import numpy as np
 import pandas as pd
 
+from hc_macro_integration.config import load_protocol
 from hc_macro_integration.paths import TABLES_DIR
 from hc_macro_integration.models.periods import (
     CANONICAL_FACTORS,
@@ -84,7 +85,7 @@ def build_prefixes(
 
 def search_breaks(
     data: pd.DataFrame,
-    max_breaks: int = 4,
+    max_breaks: int = 3,
     min_segment_fraction: float = 0.15,
     jump: int = 5,
 ):
@@ -318,11 +319,38 @@ def search_breaks(
 def run_break_search():
     data = prepare_data("primary")
 
+    protocol = load_protocol()
+    config = protocol[
+        "structural_breaks"
+    ][
+        "segmentation"
+    ]
+
+    method = str(
+        config["method"]
+    )
+
+    if method != "custom_segmented_ols_bic":
+        raise RuntimeError(
+            "Unsupported structural-break segmentation method: "
+            f"{method}"
+        )
+
     models, breaks = search_breaks(
         data=data,
-        max_breaks=4,
-        min_segment_fraction=0.15,
-        jump=5,
+        max_breaks=int(
+            config["maximum_breaks"]
+        ),
+        min_segment_fraction=float(
+            config[
+                "minimum_segment_fraction"
+            ]
+        ),
+        jump=int(
+            config[
+                "candidate_step_sessions"
+            ]
+        ),
     )
 
     models.to_csv(

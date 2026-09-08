@@ -85,8 +85,19 @@ events:
   enforce_non_overlap: true
 
 structural_breaks:
-  method: "Bai-Perron"
-  minimum_segment_fraction: 0.15
+  segmentation:
+    method: "custom_segmented_ols_bic"
+    maximum_breaks: 3
+    minimum_segment_fraction: 0.15
+    candidate_step_sessions: 5
+    bic_parameterization: "(segments * p) + breaks"
+  unknown_break_diagnostic:
+    method: "supf_like_fixed_x_residual_moving_block_bootstrap"
+    trim_fraction: 0.15
+    candidate_step_sessions: 5
+    exact_robustness_step_sessions: 1
+    block_length: 20
+    bootstrap_count: 499
 
 descriptive_periods:
   - name: "pre_2020"
